@@ -1,21 +1,38 @@
 /**index.wxss**/
-.userinfo {
+
+.user-container {
+  margin-top: 27rpx;
+}
+
+.user-tab .tabstyle {
+  color: #2c7fff;
+  border-bottom: 2rpx solid #2c7fff;
+  border-bottom-width: 6rpx;
+  padding-bottom: 24rpx;
+}
+
+.prize-content {
+  font-size: 29rpx;
+}
+
+.prize-content .itemlist {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  border-bottom: 1rpx solid #eceef3;
+  height: 107rpx;
+  line-height: 107rpx;
+  text-align: center;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.itemlist .item {
+  flex: 1;
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.sbutton {
+  background-color: #2c7fff;
+  border-radius: 27rpx;
+  width: 141rpx;
+  height: 60rpx;
+  font-size: 29rpx;
+  margin-top: 26rpx;
+  color: white;
 }

@@ -1,0 +1,2 @@
+<template name="item1"  >
+<view bindtap='tapName'>{{name}}</view></template>

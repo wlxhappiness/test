@@ -1,0 +1,13 @@
+<!-- <view class="user-tab " bindtap='handleTab'> 
+ <block wx-for="{{tabslist}}">
+    <view class="tab-item" ><text  class="{{prize?'tabstyle':''}}" >{{item.title}}</text></view>
+ </block>
+ <slot></slot>
+</view>
+ -->
+<view  class="user-tab"  bindtap='handleTab'>
+  <view  wx:for="{{lists}}" data-title="{{item.name}}" wx:key="{{item}}" class="tab-item">
+    <text class="{{activeItem===item.name?'tabstyle':''}}" data-title="{{item.name}}">{{item.title}}</text>
+  </view>
+</view>
+<slot></slot>

@@ -1,0 +1,17 @@
+/* pages/wxml/index.wxss */
+.test-container {
+  padding:8px;
+}
+.test-container input{
+ border-bottom: 1rpx solid grey;
+}
+.testclass {
+  display:flex;
+}
+.checkbox {
+  display:block;
+  margin-bottom:19rpx;
+}
+.checkbox .undline{
+  text-decoration:line-through;
+}

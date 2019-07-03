@@ -1,13 +1,50 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+<!-- <view class="user-container">
+  <view class="user-tab " bindtap='handleTab'> 
+    <view class="tab-item" data-title="prize" ><text data-title="prize" class="{{prize?'tabstyle':''}}" >奖品记录</text></view>
+    <view class="tab-item" data-title="point"><text data-title="point" class="{{!prize?'tabstyle':''}}" >积分记录</text></view>
+  </view>
+  <scroll-view scroll-y style="height: 800rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" class="prize-content" wx-if="{{prize}}">
+    <view  wx:for="{{prizeLists}}" wx-key="{{index}}" class='itemlist'>
+      <view class="item" style="color:#a2a2a2;padding-left: 9px;">{{item.time}}</view>
+      <view class="item">{{item.type}}</view>
+      <view  class="item">
+        <button wx:if="{{item.code==0}}" size="mini" class="sbutton" data-index="{{index}}" bindtap="handleGet">领取</button>
+        <text wx:if="{{item.code==1}}" style="color:#a2a2a2">已领取</text>
+      </view>
+    </view> 
+  </scroll-view>
+  <scroll-view scroll-y style="height: 800rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" class="prize-content" wx-if="{{!prize}}">
+    <view  wx:for="{{pointsLists}}" wx-key="{{index}}" class='itemlist'>
+      <view class="item" style="color:#a2a2a2; padding-left: 9px;">{{item.time}}</view>
+      <view class="item" style="color:#a2a2a2">{{item.type}}</view>
+      <view  class="item">
+        {{item.code}}积分
+      </view>
+    </view> 
+  </scroll-view>
+</view> -->
+<view class="user-container" >
+  <tab-bar user-tab="user-tab" active-item="{{activeItem}}" bindhandleTab="handleInfo" tab-item="tab-item" testdata="herllo" lists="{{tablists}}">
+  <scroll-view scroll-y style="height: 800rpx;" bindscrolltoupper="upper" bindscrolltolower="lower" class="prize-content">
+    <view  wx:for="{{resultLists}}" wx-key="{{index}}" class='itemlist'>
+      <block wx:if="{{activeItem=='prize'}}">
+      <view class="item" style="color:#a2a2a2;padding-left: 9px;">{{item.time}}</view>
+      <view class="item">{{item.type}}</view>
+      <view  class="item">
+        <button wx:if="{{item.code==0}}" size="mini" class="sbutton" data-index="{{index}}" bindtap="handleGet">领取</button>
+        <text wx:if="{{item.code==1}}" style="color:#a2a2a2">已领取</text>
+      </view>
+       </block>
+      <block wx:else>
+      <view class="item" style="color:#a2a2a2; padding-left: 9px;">{{item.time}}</view>
+      <view class="item" style="color:#a2a2a2">{{item.type}}</view>
+      <view  class="item">
+        {{item.code}}积分
+      </view>
     </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    </view> 
+  </scroll-view>
+  </tab-bar>
 </view>
+
